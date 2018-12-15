@@ -15,17 +15,17 @@ Used to examine function of non-coding regions such as enhancers, silencers, ins
 It is able to reveal the gene regulation events that play a role in biological pathways and even diseases, such as cancer
 
 ChIP-seq is a powerful technique to explore the physical binding interactions between protein and DNA. ChIP-sequencing combines chromatin immunoprecipitation (ChIP) together with next generation sequencing (Illumina) to create a new high throughput method. Chromatin immunoprecipitation (ChIP) has evolved into multiple methods to identifying protein-binding sites on chromatin. Chromatin refers to the stretches of DNA wrapped around histone proteins into nucleosomes. The primary-order chromatin refers sections of the chromatin which are unraveled thus exposing DNA. The ability of the cell to dynamic change its gene expression level by modifying its chromatin to be opened or closed is known as epigetic modifications. It is here where ChIP sequencing can resolve the protein-DNA interactions on the non-coding region of DNA such as:
--DNA methylation/acetylation  (Epigenetics)
--Enhancers regions
--Silencers regions
--Insulator regions 
--Transcription Factors 
+- DNA methylation/acetylation  (Epigenetics)
+- Enhancers regions
+- Silencers regions
+- Insulator regions 
+- Transcription Factors 
 
 The first ChIP technologies was Chip-chip which eventually developed into other forms of ChIP.
--ChIP-Chip: couples chromatin immunoprecipitation to a  microarray which allows for a genome-wide analysis of a protein or modification sites of interest.
--ChIP-Seq: uses the same chromatin immunoprecipitation procedure but couples it with next-generation sequencing technology to detect all proteins interacting with DNA. 
--ChIP-exo: specifically developed to map protein of interest (POI) binding sites in the genome. 
--ChIA-PET (Chromatin Interaction Analysis by Paired-End Tag Sequencing) uses chromatin conformation capture (3C) with ChIP technology to detect when distant DNA regions interact with each other through a protein of interest. This provides data on targeted binding factors such as: estrogen receptor alpha, CTCF-mediated loops, RNA polymerase II, and a combination of key architectural factors. 
+- ChIP-Chip: couples chromatin immunoprecipitation to a  microarray which allows for a genome-wide analysis of a protein or modification sites of interest.
+- ChIP-Seq: uses the same chromatin immunoprecipitation procedure but couples it with next-generation sequencing technology to detect all proteins interacting with DNA. 
+- ChIP-exo: specifically developed to map protein of interest (POI) binding sites in the genome. 
+- ChIA-PET (Chromatin Interaction Analysis by Paired-End Tag Sequencing) uses chromatin conformation capture (3C) with ChIP technology to detect when distant DNA regions interact with each other through a protein of interest. This provides data on targeted binding factors such as: estrogen receptor alpha, CTCF-mediated loops, RNA polymerase II, and a combination of key architectural factors. 
 
 #### What are Transciption Factors?
 A crucial data point ChIP sequencing can reveal is the location level of transciption factors bounds to the DNA. Transcription factors are proteins that help activate or inactivate the transcription specific genes by binding to nearby DNA. Transcription factors that are activators boost a gene's transcription while repressors decrease transcription. An enhancer sequence is a groups of transcription factor binding sites while silencers have the capability of turning on or off a gene within specific tissue. Transciption factors are sequence specific. Each one regulates a specific set genes. By analyzing whether or not a sequence is bound to TF, we gain crucial information about the transcription of a gene. Transciption factor binding information is very important in the discovery or curing of certain diseases. Detection of these transcription factor binding sites promotes the gene annotation of that sequence. 
@@ -66,16 +66,15 @@ Peak Finding is the most analytical process of ChIP-seq where multiple methods u
 
 
 #### A Note on Noise 
-ChIP-seq is designed to generate sequence from only specific regions bound to the antibody target. However, there are possibilities of backgroudn binding/non-specific binding of the antibody which creates non-specific reads known as noise. Noise skews the accuracy of the data. Consequently, ChiP-seq libraries need to be sufficiently large, so the correct reads drown out noise signal. Peak calling therefore is a signal to noise problem. Different applications of algorithms and chosen parameters to determine the interpretation of the data. Steps can be taken such that mapped reads must be restricted to those that map to unique known genome regions only (high specificity), or reads mapping to multiple sites in the genome (high sensitivity). Another step is to increase the size of the framents making antibodies harder to bind to them. This specificity eliminates random bidning. 
-
-
+ChIP-seq is designed to generate sequence from only specific regions bound to the antibody target. However, there are possibilities of backgroudn binding/non-specific binding of the antibody which creates non-specific reads known as noise. Noise skews the accuracy of the data. Consequently, ChiP-seq libraries need to be sufficiently large, so the correct reads drown out noise signal. Peak calling therefore is a signal to noise problem. Different applications of algorithms and chosen parameters to determine the interpretation of the data. Steps can be taken such that mapped reads must be restricted to those that map to unique known genome regions only (high specificity), or reads mapping to multiple sites in the genome (high sensitivity). Another step is to increase the size of the framents making antibodies harder to bind to them. This specificity eliminates random binding. 
 
 
 
 #### Data Visualization
-Once the peaks have been determined, all the data is compressed into a track. This track can be visualized using programs such as IGV or UCSC genome viewer to compare the peaks/expression levels between multiple sampels. These browsers make it compare by genome species,  chromosome number, and nucleotide base location. 
+Once the peaks have been determined, all the data is compressed into a track. This track can be visualized using programs such as IGV or UCSC genome viewer to compare the peaks/expression levels between multiple samples. These browsers make it compare by genome species,  chromosome number, and nucleotide base location.
 
-![IGV](https://i.ytimg.com/vi/P9n0tZxiwPs/maxresdefault.jpg, "IGV")
+![IGV](https://i.ytimg.com/vi/P9n0tZxiwPs/maxresdefault.jpg)
+Figure demonstrating use of IGV to compare different ChIP samples. Notice location and intensity of varying peaks.[6]
 
 #### Encode Project
 Dozens of labs did ChIP-seq, under rigorous quality guidelines, for over 100 transcription factors and histone modifications, plus related assays for DNA methylation, chromatin accessibility etc.[7] Sequences compiled into public access repository called ENCODE so other researchers can use data for their research. Contains only human and some mouse sequences. modENCODE database eventually created for containing fruit fly and worm sequencing data.
@@ -90,7 +89,7 @@ FactorBook: Database compiled from Encode focused on transcription factors, bind
 [3] 
 [4] 
 [5] 
-[6] 
+[6] James T. Robinson, Helga Thorvaldsdóttir, Wendy Winckler, Mitchell Guttman, Eric S. Lander, Gad Getz, Jill P. Mesirov. Integrative Genomics Viewer. Nature Biotechnology 29, 24–26 (2011)
 [7] Encode Project Consortium. An integrated encyclopedia of DNA elements in the human genome. Nature. 2012 Sep 6;489(7414):57-74. doi: 10.1038/nature11247.
 
 
