@@ -24,12 +24,12 @@ Chromatin immunoprecipitation (ChIP) has evolved into multiple methods to identi
 
 
 The first ChIP technologies was Chip-chip which eventually developed into other forms of ChIP.
-ChIP-Chip: couples chromatin immunoprecipitation to a  microarray which allows for a genome-wide analysis of a protein or modification sites of interest.
-ChIP-Seq: uses the same chromatin immunoprecipitation procedure but couples it with next-generation sequencing technology to detect all proteins interacting with DNA. 
-ChIP-exo: specifically developed to map protein of interest (POI) binding sites in the genome. 
-ChIA-PET (Chromatin Interaction Analysis by Paired-End Tag Sequencing) uses chromatin conformation capture (3C) with ChIP technology to detect when distant DNA regions interact with each other through a protein of interest. 
+-ChIP-Chip: couples chromatin immunoprecipitation to a  microarray which allows for a genome-wide analysis of a protein or modification sites of interest.
+-ChIP-Seq: uses the same chromatin immunoprecipitation procedure but couples it with next-generation sequencing technology to detect all proteins interacting with DNA. 
+-ChIP-exo: specifically developed to map protein of interest (POI) binding sites in the genome. 
+-ChIA-PET (Chromatin Interaction Analysis by Paired-End Tag Sequencing) uses chromatin conformation capture (3C) with ChIP technology to detect when distant DNA regions interact with each other through a protein of interest. 
 
-
+#### What are Transciption Factors?
 A crucial data point ChIP sequencing can reveal is the location level of transciption factors bounds to the DNA. Transcription factors are proteins that help activate or inactivate the transcription specific genes by binding to nearby DNA. Transcription factors that are activators boost a gene's transcription while repressors decrease transcription. An enhancer sequence is a groups of transcription factor binding sites while silencers have the capability of turning on or off a gene within specific tissue. Transciption factors are sequence specific. Each one regulates a specific set genes. By analyzing whether or not a sequence is bound to TF, we gain crucial information about the transcription of a gene. Transciption factor binding information is very important in the discovery or curing of certain diseases. Detection of these transcription factor binding sites promotes the gene annotation of that sequence. 
 
 
@@ -39,29 +39,22 @@ A crucial data point ChIP sequencing can reveal is the location level of transci
 
 ## Overivew of ChIP method<a name="232"></a>
 
-ChIP makes use of reversible cross-links made between DNA and associated proteins by formaldehyde fixation of cells or tissue. The fixed chromatin is physically sheared and DNA fragments associated with a particular protein are selectively immunoprecipitated and analysed. Analysis can be on a locus-by-locus basis using PCR, but more commonly ChIP is interrogated with microarrays (ChIP-chip) or next-generation sequencing (ChIP-seq).
+ChIP makes use of reversible cross-links made between DNA and associated proteins by formaldehyde fixation of cells or tissue. The fixed chromatin is physically sheared and DNA fragments associated with a particular protein are selectively immunoprecipitated and analysed. 
+
+![Process](https://vignette.wikia.nocookie.net/mmg-233-2013-genetics-genomics/images/c/cd/ChIP_Overview.png/revision/latest?cb=20131007202455 "Process")
+
+Library Preparation
+1. Crosslinking DNA-binding proteins to DNA by treatment of cells with formaldehyde
+
+2. Preparation of chromatin by sonication or enzymatic digestion.
+
+3. Immunoprecipitation of the crosslinked chromatin is performed using an antibody that recognizes a specific transcription factor or histone isoform
+
+4. Yield the collection of all the binding sites in the genome for the factor of interest.
+
+5. Purification of the precipitated fragments, the sample can be analyzed by PCR/Illumina to study particular genes.
 
 
-The foundamental object of 3C(Chromosome Conformation Capture) techniques and 3C-derived methods is to understand the physical wiring diagram of the genome by identifying the physical interaction between chromosomes. 
-
-To capture the interaction (crosslink between strings), there are few steps in general:
-- Take a snapshot of the flowing cells - **Crosslink** with fixative agent (formaldehyde)
-- Zoom in on crosslinked part and exclude untangled parts - **Digested** with a restriction enzyme
-- Analyze the components come from the same chromatin - **Reverse crosslink** and **sequence**
-- Finish the jigsaw puzzle and get the results - **Align** the reads and **summarize** the contacts
-
-> Based on these general ideas, then we'll dive deeper by walking through two of the most popular  techniques and then briefly introduce some other methods. 
-
-
-
-
-
-
-
-![](/assets/1-s2.0-S1360138518300827-gr1b2_lrg.jpg)
-[Figure1](https://doi.org/10.1016/j.tplants.2018.03.014). Schematic Representation of Chromosome Conformation Capture (3C) and 3C-Derived Methods. These methods help to elucidate nuclear organization by detecting physical interactions between genetic elements located throughout the genome. Abbreviations: IP, immunoprecipitation; RE, restriction enzyme. **Figure by Sotelo-Silveira, Mariana, et al. Trends in Plant Science (2018).**
-
-To better understand the difference between these methods, I'd like to distingush them between the following couple of aspects:
 
 #### 1) Specificity - What does _one, all, many_ mean<a name="2321"></a>
 ‘1’, ‘Many’ and ‘All’ indicate how many loci are interrogated in a given experiment. For example, ‘1 versus All’ indicates that the experiment probes the interaction profile between 1 locus and all other potential loci in the genome. ‘All versus All’ means that one can detect the interaction profiles of all loci, genome-wide, and their interactions with all other genomic loci [1].
