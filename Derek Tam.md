@@ -11,6 +11,27 @@
 
 ## 2.3.1 Introduction<a name="231"></a>
 
+
+It is a powerful tool to analyze protein-DNA interactions
+Very useful in identifying sequences that are bound by transcription factors, histone modifications, or RNA polymerase in vivo
+Used to examine function of non-coding regions such as enhancers, silencers, insulators
+It is able to reveal the gene regulation events that play a role in biological pathways and even diseases, such as cancer
+
+
+ChIP-seq is a powerful technique to explore the physical binding interactions between protein and DNA. ChIP-sequencing combines chromatin immunoprecipitation (ChIP) together with next generation sequencing (Illumina) to create a new high throughput method. 
+
+Chromatin immunoprecipitation (ChIP) has evolved into multiple methods to identifying protein-binding sites on chromatin. Chromatin refers to the stretches of DNA wrapped around histone proteins into nucleosomes. The primary-order chromatin refers sections of the chromatin which are unraveled thus exposing DNA. It is here where ChIP sequencing can resolved the protein-DNA interactions which encompasses DNA methylation sites, enhancer, silencer, insulator regions, as well as transcription factors. The ability of the cell to dynamic change its gene expression level by modifying its chromatin to be opened or closed is known as epigetic modifications.
+
+
+The first ChIP technologies was ChIP-Chip which couples chromatin immunoprecipitation to a  microarray which allows for a genome-wide analysis of a protein or modification sites of interest. ChIP-Seq uses the same chromatin immunoprecipitation procedure but couples it with next-generation sequencing technology to detect all proteins interacting with DNA. ChIP-exo is specifically developed to map protein of interest (POI) binding sites in the genome. ChIA-PET (Chromatin Interaction Analysis by Paired-End Tag Sequencing) uses chromatin conformation capture (3C) with ChIP technology to detect when distant DNA regions interact with each other through a protein of interest. 
+
+
+
+
+
+ChIP makes use of reversible cross-links made between DNA and associated proteins by formaldehyde fixation of cells or tissue. The fixed chromatin is physically sheared and DNA fragments associated with a particular protein are selectively immunoprecipitated and analysed. Analysis can be on a locus-by-locus basis using PCR, but more commonly ChIP is interrogated with microarrays (ChIP-chip) or next-generation sequencing (ChIP-seq).
+
+
 The foundamental object of 3C(Chromosome Conformation Capture) techniques and 3C-derived methods is to understand the physical wiring diagram of the genome by identifying the physical interaction between chromosomes. 
 
 To capture the interaction (crosslink between strings), there are few steps in general:
@@ -21,7 +42,7 @@ To capture the interaction (crosslink between strings), there are few steps in g
 
 > Based on these general ideas, then we'll dive deeper by walking through two of the most popular  techniques and then briefly introduce some other methods. 
 
-## 2.3.2 Overivew of 3C methods<a name="232"></a>
+## Overivew of 3C methods<a name="232"></a>
 
 ![](/assets/1-s2.0-S1360138518300827-gr1b2_lrg.jpg)
 [Figure1](https://doi.org/10.1016/j.tplants.2018.03.014). Schematic Representation of Chromosome Conformation Capture (3C) and 3C-Derived Methods. These methods help to elucidate nuclear organization by detecting physical interactions between genetic elements located throughout the genome. Abbreviations: IP, immunoprecipitation; RE, restriction enzyme. **Figure by Sotelo-Silveira, Mariana, et al. Trends in Plant Science (2018).**
