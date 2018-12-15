@@ -1,9 +1,9 @@
 # ChIP Sequencing (Chromatin Immunoprecipitation Sequencing) 
 1. [Introduction]
-2. [Overview of Process]
+2. [Workflow]
     2.1. [Specificity](#2321)<br>
     2.2. [Through-put and resolution](#2322)
-3. [Interpretation]
+3. [Data Analysis]
 4. [Application]
 
 
@@ -28,6 +28,13 @@ The first ChIP technologies was Chip-chip which eventually developed into other 
 -ChIP-Seq: uses the same chromatin immunoprecipitation procedure but couples it with next-generation sequencing technology to detect all proteins interacting with DNA. 
 -ChIP-exo: specifically developed to map protein of interest (POI) binding sites in the genome. 
 -ChIA-PET (Chromatin Interaction Analysis by Paired-End Tag Sequencing) uses chromatin conformation capture (3C) with ChIP technology to detect when distant DNA regions interact with each other through a protein of interest. 
+
+
+ChIA-PET is another method that combines ChIP and pair-end sequencing to analysis the chromtin interaction. It allows for targeted binding factors such as: estrogen receptor alpha, CTCF-mediated loops, RNA polymerase II, and a combination of key architectural factors. on the one hand, it has the benefit of achieving a higher resolution compared to Hi-C, as only ligation products involving the immunoprecipitated molecule are sequenced, on the other hand, ChIA-PET has systematic biases due to ChIP process:
+- Only one type of binding factor selected
+- Different antibodies
+- ChIP conditions
+
 
 #### What are Transciption Factors?
 A crucial data point ChIP sequencing can reveal is the location level of transciption factors bounds to the DNA. Transcription factors are proteins that help activate or inactivate the transcription specific genes by binding to nearby DNA. Transcription factors that are activators boost a gene's transcription while repressors decrease transcription. An enhancer sequence is a groups of transcription factor binding sites while silencers have the capability of turning on or off a gene within specific tissue. Transciption factors are sequence specific. Each one regulates a specific set genes. By analyzing whether or not a sequence is bound to TF, we gain crucial information about the transcription of a gene. Transciption factor binding information is very important in the discovery or curing of certain diseases. Detection of these transcription factor binding sites promotes the gene annotation of that sequence. 
@@ -56,6 +63,49 @@ Library Preparation
 
 
 
+
+
+## Data Analysis<a name="232"></a>
+The results of the ChIP process produces data of reads representing the sequences of the DNA where proteins where bound. 
+
+But how do we interpret these reads?
+![Read alignment](http://i.imgur.com/Ld3Gru6.jpg "Reads")
+1. Reference genome is chosen. Reads mapped back to reference. (bowtie)
+    - if necessary, reads can be trimmed out by quality to improve mapping (fastq) 
+2. Background noise subtracted
+3. Peak calling determination (MACS2)
+4. Peaks loaded into visual reader (UCSC Genome/IGV)
+5. De Novo Motif finding analysis (MEME-ChIP)
+    -furthermore a functional analysis using (GO/DAVID) can be employed
+
+
+Peak calling using MACS2
+Motif finding
+ Function analysis for up/down regulated gene
+Data visualization (Part 3)   
+
+Peak calling (MACS2)
+Sequencing depth normalization
+Adjust p-value and fdr
+True positive peak compared to input data 
+Compare peak position with CpG islands and TSS for further validation*
+
+Motif finding (MEME-ChIP)
+
+Functional analysis (GO / DAVID)
+up/down regulated genes
+across sample comparison
+
+
+#### Encode Project
+Dozens of labs did ChIP-seq, under rigorous quality guidelines, for over 100 transcription factors and histone modifications, plus related assays for DNA methylation, chromatin accessibility etc. Contains only human and some mouse sequences. modENCODE database eventually created for containing fruit fly and worm sequencing data.
+
+Encode Project Consortium. An integrated encyclopedia of DNA elements in the human genome. Nature. 2012 Sep 6;489(7414):57-74. doi: 10.1038/nature11247.
+
+FactorBook: Database compiled from Encode focused on transcription factors, binding motifs, TF-TF interactions, and chromatin features.		
+
+
+
 #### 1) Specificity - What does _one, all, many_ mean<a name="2321"></a>
 ‘1’, ‘Many’ and ‘All’ indicate how many loci are interrogated in a given experiment. For example, ‘1 versus All’ indicates that the experiment probes the interaction profile between 1 locus and all other potential loci in the genome. ‘All versus All’ means that one can detect the interaction profiles of all loci, genome-wide, and their interactions with all other genomic loci [1].
 
@@ -81,22 +131,7 @@ The principle of Hi-C can be illustrated as:
 - Adapter ligation: paired-end and indexing
 - PCR: create enough material for flow cell
 
-##### Hi-C derived techniques 
-- Hi-C original: [Lieberman-Aiden et al., Science 2010](doi: 10.1126/science.1181369)
-- Hi-C 1.0: [Belton-JM et al., Methods 2012](doi: 10.1016/j.ymeth.2012.05.001)
-- In situ Hi-C: [Rao et al., Cell 2014](doi: 10.1016/j.cell.2014.11.021)
-- Single cell Hi-C: [Nagano et al., Genome Biology 2015](https://doi.org/10.1186/s13059-015-0753-7)
-- DNase Hi-C [Ma, Wenxiu, Methods et al](https://www.ncbi.nlm.nih.gov/pubmed/25437436)
-- Hi-C 2.0: [Belaghzal et al., Methods 2017](https://www.ncbi.nlm.nih.gov/pubmed/28435001)
-- DLO-Hi-C: [Lin et al., Nature Genetics 2018](https://doi.org/10.1038/s41588-018-0111-2)
-- Hi-C improving: [Golloshi et al., Methods 2018](https://www.biorxiv.org/content/biorxiv/early/2018/02/13/264515.full.pdf)
-- Arima 1-day Hi-C: [Ghurye et al., BioRxiv 2018](https://www.biorxiv.org/content/early/2018/02/07/261149)
 
-## 2.3.4 ChIA-PET<a name="234"></a> 
-ChIA-PET is another method that combines ChIP and pair-end sequencing to analysis the chromtin interaction. It allows for targeted binding factors such as: estrogen receptor alpha, CTCF-mediated loops, RNA polymerase II, and a combination of key architectural factors. on the one hand, it has the benefit of achieving a higher resolution compared to Hi-C, as only ligation products involving the immunoprecipitated molecule are sequenced, on the other hand, ChIA-PET has systematic biases due to ChIP process:
-- Only one type of binding factor selected
-- Different antibodies
-- ChIP conditions
 
 
 ## 2.3.5 Selected methods comparison<a name="235"></a> 
